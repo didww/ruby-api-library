@@ -12,8 +12,6 @@
 #
 #######################################################################
 
-require 'rake'
-
 Gem::Specification.new do |s|
     s.name        = 'KayakoClient'
     s.version     = '1.2.1'
@@ -27,6 +25,6 @@ Gem::Specification.new do |s|
     s.description = 'Kayako\'s official Ruby interface library for the REST API.'
     s.homepage    = 'https://github.com/kayako/ruby-api-library'
 
-    s.files       = FileList['lib/**/*.rb']
-    s.test_files  = FileList['test/*.rb']
+    s.files       = Dir['lib/**/*.rb']
+    s.test_files  = Dir['test/*.rb']
 end
