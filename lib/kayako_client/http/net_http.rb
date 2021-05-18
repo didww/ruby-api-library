@@ -13,6 +13,7 @@
 #######################################################################
 
 require 'net/https'
+require 'erb'
 
 module KayakoClient
     class NetHTTP
@@ -108,7 +109,7 @@ module KayakoClient
     private
 
         def urlencode(string)
-            URI.escape(string, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+           ERB::Util.url_encode(string)
         end
 
         def url(base, params = {})
